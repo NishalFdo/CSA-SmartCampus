@@ -127,19 +127,12 @@ http://localhost:8080/SmartCampusAPI/api/v1
 
 ---
 
-## Sample cURL Commands
+## Sample CURL Commands
 
 ### Create a Room
 
 ```bash
-curl -X POST "http://localhost:8080/SmartCampusAPI/api/v1/rooms" \
-  -H "Content-Type: application/json" \
-  -H "Accept: application/json" \
-  -d '{
-    "id": "ROOM-001",
-    "name": "LIBRARY",
-    "capacity": 100
-  }'
+curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/rooms -H "Content-Type: application/json" -H "Accept:application/json" -d "{\"id\":\"ROOM-001\",\"name\":\"LIBRARY\",\"capacity\":100}"
 ```
 
 ---
@@ -147,8 +140,7 @@ curl -X POST "http://localhost:8080/SmartCampusAPI/api/v1/rooms" \
 ### Retrieve All Rooms
 
 ```bash
-curl -X GET "http://localhost:8080/SmartCampusAPI/api/v1/rooms" \
-  -H "Accept: application/json"
+curl -X GET http://localhost:8080/SmartCampusAPI/api/v1/rooms -H "Accept: application/json"
 ```
 
 ---
@@ -156,8 +148,7 @@ curl -X GET "http://localhost:8080/SmartCampusAPI/api/v1/rooms" \
 ### Retrieve a Room by ID
 
 ```bash
-curl -X GET "http://localhost:8080/SmartCampusAPI/api/v1/rooms/ROOM-001" \
-  -H "Accept: application/json"
+curl -X GET http://localhost:8080/SmartCampusAPI/api/v1/rooms/ROOM-001 -H "Accept: application/json"
 ```
 
 ---
@@ -165,15 +156,7 @@ curl -X GET "http://localhost:8080/SmartCampusAPI/api/v1/rooms/ROOM-001" \
 ### Register a Sensor
 
 ```bash
-curl -X POST "http://localhost:8080/SmartCampusAPI/api/v1/sensors" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "id": "TEMP-001",
-    "type": "Temperature",
-    "status": "ACTIVE",
-    "currentValue": 25,
-    "roomId": "ROOM-001"
-  }'
+curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/sensors -H "Content-Type: application/json" -d "{\"id\":\"TEMP-001\",\"type\":\"Temperature\",\"status\":\"ACTIVE\",\"currentValue\":111,\"roomId\":\"ROOM-001\"}"
 ```
 
 ---
@@ -181,8 +164,7 @@ curl -X POST "http://localhost:8080/SmartCampusAPI/api/v1/sensors" \
 ### Filter Sensors by Type
 
 ```bash
-curl -X GET "http://localhost:8080/SmartCampusAPI/api/v1/sensors?type=Temperature" \
-  -H "Accept: application/json"
+curl -X GET "http://localhost:8080/SmartCampusAPI/api/v1/sensors?type=Temperature" -H "Accept: application/json"
 ```
 
 ---
